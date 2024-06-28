@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - TikTok Management</title>
+  <link rel="stylesheet" href="how to use  icon offline/bootstrap-icons.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+            
+
+    .login-container {
+      width: 80%;
+      max-width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 87%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    button {
+      width: 95%;
+      padding: 10px;
+      background-color: #00a1d5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .opentiktok {
+      width: 35%;
+      padding: 10px;
+      background-image: linear-gradient(60deg, #00a1d5, #FF1CFE);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .delete {
+      width: 60%;
+      padding: 10px;
+      background-image: linear-gradient(60deg, #FF1CFE, #00a1d5);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tiktikername {
+      width: 60%;
+      padding: 10px;
+      background-color: transparent;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 19px;
+    }
+    .tiktikername:hover {
+      background-color: transparent;
+    }
+
+    .opntiktikdiv {
+      margin-top: 20px;
+    }
+    .opntiktikdivusers {
+      margin-top: 20px;
+    }
+.footer {
+    background-color: #00a1d5;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 4px;
+    padding-top: 5px;
+}
+
+
+ .card {
+    width: 330px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px 0px 60px 0px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+  .card-content {
+    padding: 20px;
+  }
+  .sponsor-label {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-bottom: solid #ccc 1px;
+  }
+  .sponsor-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .sponsor-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    padding-top: 10px;
+  }
+  .logo{
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin: 10px;
+  }
+  .sponame{
+      margin: 12px 4px;
+      padding: 0px;
+  }
+  
+  .name{
+      margin: 0px;
+      padding: 0px;
+      font-size: 14px;
+      color: black;
+      
+  }
+  .spon{
+      margin: 0px;
+      padding: 0px;
+      font-size: 12px;
+      margin-top: 5px;
+      color: #999;
+  }
+  .flx{
+      display: flex;
+      
+  }
+  .ico{
+      color: white;
+      font-size: 18px;
+      position: relative;
+      left: 40px;
+      top: 4px;
+        }
+        
+.icobtm{
+         color: black;
+      font-size: 20px;
+}
+
+.icomesg{
+    color: black;
+     font-size: 22px;
+}
+a{
+    text-decoration: none;
+}
+    @media screen and (max-width: 600px) {
+      .login-container {
+        width: 80%;
+        margin-top: 80px;
+      }
+      body {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+    
+
+    
+    
+  <div class="login-container">
+    <h2>Add TikTok Links Here</h2>
+    <form id="tiktokForm">
+      <div class="input-group">
+        <label for="UploaderName">TikToker Name</label>
+        <input type="text" id="UploaderName" name="UploaderName" required>
+      </div>
+      <div class="input-group">
+        <label for="link">Link</label>
+        <input type="text" id="link" name="link" required>
+      </div>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <div class="login-container">
+    <h2>Rising Stars Videos</h2>
+    <div id="tiktokList"></div>
+  </div>
+<!--
+<a href="https://www.instagram.com/muhammad_ashiq_official_?igsh=MTAxeXRjbXBwd2Jsbw==">
+    
+<div class="card">
+    <div class="flx">
+        
+   <div>
+      <img class="logo" src="Snapchat-1011805863.jpg" alt="Sponsored Image">     
+  </div>
+
+    <div class="sponame">
+  <p class="name"> Silent Joker  </p>   
+     
+  <p class="spon"> Sponsored </p>
+    </div>
+    
+    </div>
+ 
+  
+    
+  <img class="card-img" src="Snapchat-1011805863.jpg" alt="Sponsored Image">
+  <div class="card-content">
+    <div class="sponsor-label">Send Instagram Message  
+
+    
+</div>
+
+    <div class="sponsor-description">
+       <i class="bi-heart icobtm"></i> 
+    &nbsp; &nbsp;
+           <i class="bi-envelope icomesg"></i> 
+            &nbsp; &nbsp;    &nbsp; &nbsp;     &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;
+                &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp;
+           
+ <i class="bi-bookmark icobtm"></i> 
+        
+      <p class="spon"> Silent Joker </p>
+    
+    </div>
+  </div>
+</div>
+
+</a>
+--> 
+
+  <div class="footer">
+        &copy;6NETWORK Powered By Silent Joker. <br>All rights reserved
+    </div>
+
+
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyC3KcQSG8THJnpzyr_vlOsFx_yNrMwacS8",
+      authDomain: "network-cecda.firebaseapp.com",
+      projectId: "network-cecda",
+      storageBucket: "network-cecda.appspot.com",
+      messagingSenderId: "90708300742",
+      appId: "1:90708300742:web:c383d50386d48d3a9dd8c7"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const tiktokForm = document.getElementById('tiktokForm');
+    const tiktokList = document.getElementById('tiktokList');
+
+    tiktokForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const UploaderName = e.target.UploaderName.value;
+      const link = e.target.link.value;
+      const newTiktokRef = push(ref(db, 'tiktoks'));
+      set(newTiktokRef, {
+        UploaderName,
+        link
+      }).then(() => {
+        console.log("Data added successfully!");
+        e.target.reset();
+      }).catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+    });
+
+    onValue(ref(db, 'tiktoks'), (snapshot) => {
+      tiktokList.innerHTML = '';
+      snapshot.forEach((childSnapshot) => {
+        const childKey = childSnapshot.key;
+        const childData = childSnapshot.val();
+        const tiktokElement = document.createElement('div');
+        tiktokElement.innerHTML = `
+          <div class="opntiktikdivusers">
+            <button class="delete" onclick="deleteTiktok('${childKey}')"> ${childData.UploaderName}</button>
+            <button class="opentiktok" onclick="window.open('${childData.link}', '_blank')">Open TikTok</button>
+          </div>
+        `;
+        tiktokList.appendChild(tiktokElement);
+      });
+      console.log("Data retrieved successfully!");
+    });
+
+    function deleteTiktok(id) {
+      remove(ref(db, 'tiktoks/' + id)).then(() => {
+        console.log("Data deleted successfully!");
+      }).catch((error) => {
+        console.error("Error deleting document: ", error);
+      });
+    }
+  </script>
+</body>
+</html>
